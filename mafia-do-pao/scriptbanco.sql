@@ -1,7 +1,7 @@
 CREATE DATABASE mafia;
 
 USE mafia;
- 
+
 CREATE TABLE tb_usuarios(
     usu_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     usu_login VARCHAR(100) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE tb_usuarios(
     usu_senha VARCHAR(100) NOT NULL,
     usu_status CHAR(1) NOT NULL
 );
- 
+
 CREATE TABLE tb_clientes(
     cli_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     cli_cpf VARCHAR(30) NULL,
@@ -18,7 +18,7 @@ CREATE TABLE tb_clientes(
     cli_cel VARCHAR(15),
     cli_status CHAR(1)
 );
- 
+
 CREATE TABLE tb_produtos(
     pro_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     pro_nome VARCHAR(100) NOT NULL,
@@ -27,19 +27,19 @@ CREATE TABLE tb_produtos(
     pro_preco DECIMAL(10,2) NOT NULL,
     pro_status CHAR(1) NOT NULL
 );
- 
+
 CREATE TABLE tb_receitas(
     rec_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     fk_pro_id INT NOT NULL
 );
- 
+
 CREATE TABLE tb_ingredientes(
     ing_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     ing_nome VARCHAR(100) NOT NULL,
     ing_unidade VARCHAR(10) NOT NULL,
     ing_quantidade DECIMAL(10,2) NOT NULL
 );
- 
+
 CREATE TABLE tb_item_venda(
     iv_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     iv_valortotal DECIMAL(10,2) NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE tb_item_venda(
     fk_cli_id INT NOT NULL,
     fk_pro_id INT NOT NULL
 );
- 
+
 CREATE TABLE tb_vendas(
     ven_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     ven_datavenda DATETIME NOT NULL,
