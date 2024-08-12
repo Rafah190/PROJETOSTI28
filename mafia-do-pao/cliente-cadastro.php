@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" name="txtnome" placeholder="DIGITE SEU NOME" required>
             <br>
             <label>CPF</label>
-            <input type="text" id="cpf" name="txtcpf" placeholder="000.000.00-00" maxlength="14"
+            <input type="text" id="cpf" name="txtcpf" placeholder="000.000.000-00" maxlength="14"
                 oninput="formatarCPF(this) required">
             <br>
             <label>EMAIL</label>
