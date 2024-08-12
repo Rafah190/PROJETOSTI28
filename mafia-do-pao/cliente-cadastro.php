@@ -45,8 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" name="txtnome" placeholder="DIGITE SEU NOME" required>
             <br>
             <label>CPF</label>
-            <input type="text" id="cpf" name="txtcpf" placeholder="000.000.000-00" maxlength="14"
-                oninput="formatarCPF(this) required">
+            <input type="text" id="cpf" name="txtcpf" placeholder="000.000.000-00" maxlength="14" oninput="formatarCPF(this)" required>
             <br>
             <label>EMAIL</label>
             <input type="email" name="txtemail" placeholder="DIGITE SEU EMAIL" required>
@@ -57,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <br>
             <input type="submit" value="CADASTRAR">
         </form>
-        <script src=scripts/script.js> </script>
+        <script src=scripts/script.js></script>
     </div>
 </body>
 
