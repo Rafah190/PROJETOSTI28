@@ -1,36 +1,39 @@
 <?php
 include('conectadb.php');
- 
-//COLETA O VALOR ID DA URL
+include('topo.php');
+
+// COLETA O VALOR id LÁ DA URL
 $id = $_GET['id'];
 $sql = "SELECT * FROM tb_usuarios WHERE usu_id = '$id'";
+
 $retorno = mysqli_query($link, $sql);
- 
-while($tbl = mysqli_fetch_array($retorno)){
-    $login = $tbl[1];
-    $email = $tbl[2];
-    $senha = $tbl[3];
-    $status = $tbl[4];
-}
- 
-// BORA FAZER O UPDATE
-if($_SERVER['REQUEST_METHOD']=='POST'){
+    while($tbl = mysqli_fetch_array($retorno)){
+        $id = $tbl[0];
+        $login = $tbl[1];
+        $email = $tbl[2];
+        $senha = $tbl[3];
+        $status = $tbl[4];
+    }
+
+// BORA FAZER O UPDATE??
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $id = $_POST['id'];
     $senha = $_POST['txtsenha'];
     $email = $_POST['txtemail'];
     $status = $_POST['status'];
- 
-    $sql = "UPDATE tb_usuarios SET usu_senha = '$senha', usu_email = '$email', usu_status = '$status' WHERE usu_id = $id";
- 
+
+    $sql = "UPDATE tb_usuarios 
+    SET usu_senha = '$senha', usu_email = '$email', usu_status = '$status'
+    WHERE usu_id = $id";
+
     mysqli_query($link, $sql);
 
     echo"<script>window.alert('USUARIO ALTERADO COM SUCESSO!');</script>";
     echo"<script>window.location.href='usuario-lista.php';</script>";
     exit();
-
 }
- 
- 
+
+
 ?>
  
 <!DOCTYPE html>
